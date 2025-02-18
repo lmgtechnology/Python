@@ -27,8 +27,13 @@ def main():
             ", \
             formatter_class=RawDescriptionHelpFormatter \
     )
-    parser.add_argument('--format', type=chr, default='d') 
-    parser.print_help()
+    # Works below
+    # parser.add_argument('--format', type=chr, default='d') 
+    parser.add_argument("choices", nargs="+", help="Choices:")
+    args = parser.parse_args()
+    # parser.print_help() # Worked
+    for choice in args.choices:
+        print (choice)
 
     """
     parser = argparse.ArgumentParser(description="Process script options.", epilog=usage, 
