@@ -1,9 +1,19 @@
 # keys
 
+import argparse
 from datetime import datetime
 
-def get_date():
-    return datetime.now().strftime("%Y%m%d.%H%M%S")
+def main():
+    import argparse, locale, os
+
+    parser = argparse.ArgumentParser()
+    program_file = os.path.basename(__file__)
+
+    args = parser.parse_args()
+
+    version = "1.0"
+    parser.add_argument('variable_length', type=int, help='Length of variable being passed')
+    parser.add_argument('line_length', type=int, help='Total length of line, including variable and spaces')
 
 
 choices = {
