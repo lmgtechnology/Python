@@ -1,2 +1,7 @@
-logs/
-__pycache__
+# Ignore everything by default so only files intentionally placed in Python/ are tracked.
+*
+
+# Keep the repo config and the managed scripts folder.
+!/.gitignore
+!/Python/
+!/Python/**
